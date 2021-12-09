@@ -20,11 +20,21 @@ public class GameController {
 
         gameObjects = new CopyOnWriteArrayList<>();
         gameObjects.add(new Food(1, 2));
-        gameObjects.add(new Food(6, 5));
-        gameObjects.add(new Food(9, 2));
+     //   gameObjects.add(new Food(6, 5));
+     //   gameObjects.add(new Food(9, 2));
 
-        gameObjects.add(new Wall(3, 8));
-        gameObjects.add(new Wall(8, 3));
+        for (int i = 9; i > 0; i--) {
+            gameObjects.add(new Wall(0, i));
+        }
+        for (int j = 1; j <= 9; j++) {
+            gameObjects.add(new Wall(9, j));
+        }
+        for (int y = 9; y > -1; y--) {
+            gameObjects.add(new Wall2(y, 9));
+        }
+        for (int x = 0; x <=9; x++) {
+            gameObjects.add(new Wall2(x,0));
+        }
 
         gameScreen = new GameScreen();
 
@@ -47,7 +57,7 @@ public class GameController {
     private void updataGameState() {
         for (ObjectOnScreen obj : gameObjects) {
             if (snake.intersectsWith(obj)) {
-                System.out.println("Collide!");
+                System.out.println("Oops!");
                 snake.collideWith(obj);
                 gameObjects.remove(obj);
                 generateFood();

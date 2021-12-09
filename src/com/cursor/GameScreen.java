@@ -4,7 +4,7 @@ import com.cursor.gameobjects.ObjectOnScreen;
 
 public class GameScreen {
     int screenSize = 10;
-    char emptyCell = '*';
+    char emptyCell = ' ';
     char[][] screen = new char[screenSize][screenSize];
 
 
@@ -27,7 +27,7 @@ public class GameScreen {
     }
 
     public void setObjectOnScreen(ObjectOnScreen o) {
-        screen[o.x][o.y] = o.printableCharacter;
+        screen[o.x][o.y] = o.printableCharacter1;
     }
 
 

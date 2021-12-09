@@ -2,12 +2,14 @@ package com.cursor.gameobjects;
 
 public abstract class ObjectOnScreen {
     public int x, y;
-    public char printableCharacter;
+    public char printableCharacter1;
 
-    public ObjectOnScreen(int x, int y, char printableCharacter) {
+
+
+    public ObjectOnScreen(int x, int y, char d) {
         this.x = x;
         this.y = y;
-        this.printableCharacter = printableCharacter;
+        this.printableCharacter1 = d;
     }
 
     public boolean intersectsWith(ObjectOnScreen other) {

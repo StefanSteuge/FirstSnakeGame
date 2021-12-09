@@ -6,7 +6,7 @@ public class Food extends ObjectOnScreen {
 
     public Food(int x, int y) {
 
-        super(x, y, '@');
+        super(x, y,'@');
     }
 
 
